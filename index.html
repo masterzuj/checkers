@@ -1,0 +1,129 @@
+<html>
+	<head>
+	<title>Checkers</title>
+		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+		<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  
+		<style>
+
+		.DotBlue{
+			height:50px;
+			width:50px;
+			border-radius:25px;
+			background-color:blue;
+			 z-index:3;
+		}
+		
+		.DotRed{
+			height:50px;
+			width:50px;
+			border-radius:25px;
+			background-color:red;
+			 z-index:2;
+		}
+		.DotText{
+			width:50px;
+			border-radius:5px;
+			background-color:transparent;
+			font-size: 10px;
+			height:15px;
+			margin-top:17.5px;
+			color:white;
+			border: 1px solid white;
+			text-align: center;
+			}
+			
+			.blackfield{
+				background-color:black;
+				height:50px;
+				width:50px;
+			}
+			.whitefield{
+				background-color:white;
+				height:50px;
+				width:50px;
+			}
+			.DameBoard{
+				border: 1px solid black;
+			}
+		</style>
+		
+		<script>
+		
+			$( document ).ready(function() {
+				console.log( "Dot Ready!" );
+				
+				$( ".DotBlue" ).draggable({ grid: [ 53, 53 ] });
+				$( ".DotRed" ).draggable({ grid: [ 53, 53 ] });
+				
+				$( ".droppable" ).droppable({
+				  drop: function( event, ui ) {
+				  //alert($( this ).css("background-color"));
+					$( this ).css("background-color", "white" );
+					 $( this ).css("z-index", "1" ); 
+				  }
+				});
+				
+			});
+		
+		</script>
+	</head>
+
+	<body>
+		<center>
+		<b>Checkers</b><br/>
+			<table class="DameBoard">
+				<tr>
+					<td class="blackfield"><div class="DotBlue droppable"><input type="text" class="DotText"></div></td><td class="whitefield"></td>
+					<td class="blackfield"><div class="DotBlue droppable"><input type="text" class="DotText"></div></td><td class="whitefield"></td>
+					<td class="blackfield"><div class="DotBlue droppable"><input type="text" class="DotText"></div></td><td class="whitefield"></td>
+					<td class="blackfield"><div class="DotBlue droppable"><input type="text" class="DotText"></div></td><td class="whitefield"></td>
+				</tr>
+				<tr>
+					<td class="whitefield"></td><td class="blackfield"><div class="DotBlue droppable"><input type="text" class="DotText"></div></td>
+					<td class="whitefield"></td><td class="blackfield"><div class="DotBlue droppable"><input type="text" class="DotText"></div></td>
+					<td class="whitefield"></td><td class="blackfield"><div class="DotBlue droppable"><input type="text" class="DotText"></div></td>
+					<td class="whitefield"></td><td class="blackfield"><div class="DotBlue droppable"><input type="text" class="DotText"></div></td>
+				</tr>
+				<tr>
+					<td class="blackfield"><div class="DotBlue droppable"><input type="text" class="DotText"></div></td><td class="whitefield"></td>
+					<td class="blackfield"><div class="DotBlue droppable"><input type="text" class="DotText"></div></td><td class="whitefield"></td>
+					<td class="blackfield"><div class="DotBlue droppable"><input type="text" class="DotText"></div></td><td class="whitefield"></td>
+					<td class="blackfield"><div class="DotBlue droppable"><input type="text" class="DotText"></div></td><td class="whitefield"></td>
+				</tr>
+				<tr>
+					<td class="whitefield"></td><td class="blackfield"></td>
+					<td class="whitefield"></td><td class="blackfield"></td>
+					<td class="whitefield"></td><td class="blackfield"></td>
+					<td class="whitefield"></td><td class="blackfield"></td>
+				</tr>
+				<tr>
+					<td class="blackfield"></td><td class="whitefield"></td>
+					<td class="blackfield"></td><td class="whitefield"></td>
+					<td class="blackfield"></td><td class="whitefield"></td>
+					<td class="blackfield"></td><td class="whitefield"></td>
+				</tr>
+				<tr>
+					<td class="whitefield"></td><td class="blackfield"><div class="DotRed droppable"><input type="text" class="DotText"></div></td>
+					<td class="whitefield"></td><td class="blackfield"><div class="DotRed droppable"><input type="text" class="DotText"></div></td>
+					<td class="whitefield"></td><td class="blackfield"><div class="DotRed droppable"><input type="text" class="DotText"></div></td>
+					<td class="whitefield"></td><td class="blackfield"><div class="DotRed droppable"><input type="text" class="DotText"></div></td>
+				</tr>
+				<tr>
+					<td class="blackfield"><div class="DotRed droppable"><input type="text" class="DotText"></div></td><td class="whitefield"></td>
+					<td class="blackfield"><div class="DotRed droppable"><input type="text" class="DotText"></div></td><td class="whitefield"></td>
+					<td class="blackfield"><div class="DotRed droppable"><input type="text" class="DotText"></div></td><td class="whitefield"></td>
+					<td class="blackfield"><div class="DotRed droppable"><input type="text" class="DotText"></div></td><td class="whitefield"></td>
+				</tr>
+				<tr>
+					<td class="whitefield"></td><td class="blackfield"><div class="DotRed droppable"><input type="text" class="DotText"></div></td>
+					<td class="whitefield"></td><td class="blackfield"><div class="DotRed droppable"><input type="text" class="DotText"></div></td>
+					<td class="whitefield"></td><td class="blackfield"><div class="DotRed droppable"><input type="text" class="DotText"></div></td>
+					<td class="whitefield"></td><td class="blackfield"><div class="DotRed droppable"><input type="text" class="DotText"></div></td>
+				</tr>
+				
+			</table>
+			
+		</center>
+	</body>
+</html>
